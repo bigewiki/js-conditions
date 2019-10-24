@@ -41,7 +41,9 @@
         setHtml("sales", `Total Sales: $` + totalSales);
         setHtml(
           "percentoff",
-          `Discount Percentage: ${discount.toString().split(".")[1]}%`
+          `Discount Percentage: ${
+            discount !== 0 ? (discount * 100).toFixed() : 0
+          }%`
         );
         setHtml("amount", `Discount Amount: $` + discountAmount.toFixed(2));
         setHtml("final", `Final Price: $` + finalPrice.toFixed(2));
