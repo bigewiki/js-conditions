@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Javscript Conditions!</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="dcterms.rightsHolder" content="Edward M." />
+    <meta name="dcterms.dateCopyrighted" content="2019" />
+    <meta name="description" content="Javscript Conditions" />
+    <meta
+      name="keywords"
+      content="super amazing awesome incredible fantastic cool"
+    />
+    <script
+      src="https://kit.fontawesome.com/9bf2aeb3dd.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="conditionals.css" />
+    <script>
+      const setHtml = (id, string) => {
+        document.getElementById(id).innerHTML = string;
+      };
+
+      const calcSale = () => {
+        let totalSales = document.getElementById("sale").value;
+        let discount = 0;
+
+        if (totalSales < 100) {
+          discount = 0;
+        } else if (totalSales < 400) {
+          discount = 0.1;
+        } else if (totalSales < 500) {
+          discount = 0.12;
+        } else {
+          discount = 0.14;
+        }
+
+        const discountAmount = totalSales * discount;
+        const finalPrice = totalSales - discountAmount;
+
+        setHtml("sales", `Total Sales: $` + totalSales);
+        setHtml(
+          "percentoff",
+          `Discount Percentage: ${discount.toString().split(".")[1]}%`
+        );
+        setHtml("amount", `Discount Amount: $` + discountAmount.toFixed(2));
+        setHtml("final", `Final Price: $` + finalPrice.toFixed(2));
+      };
+
+      const clearSale = () => {
+        setHtml("sales", "");
+        setHtml("percentoff", "");
+        setHtml("amount", "");
+        setHtml("final", "");
+      };
+
+      window.onload = () => {
+        //prevent default on form
+        document
+          .getElementById("checkout")
+          .addEventListener("click", function(event) {
+            event.preventDefault();
+          });
+      };
+    </script>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="outer-container">
+        <h1>Conditions</h1>
+        <div class="inner-container">
+          <form id="sales-form">
+            <div class="flex-row">
+              <label for="sale">Sale Amount</label>
+            </div>
+            <div class="flex-row">
+              <input
+                name="sale"
+                min=".01"
+                step="0.01"
+                type="number"
+                id="sale"
+              />
+            </div>
+            <div class="flex-row">
+              <input type="reset" value="empty cart" onclick="clearSale()" />
+              <button id="checkout" onclick="calcSale()">
+                <i class="fas fa-shopping-cart"></i> Checkout
+              </button>
+            </div>
+          </form>
+          <br />
+          <p id="sales"></p>
+          <p id="percentoff"></p>
+          <p id="amount"></p>
+          <p id="final"></p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="validator"></div>
+      <script>
+        document.getElementById(
+          "validator"
+        ).innerHTML = `<a href="http://validator.w3.org/nu/?doc=${window.location.href}" target="_blank">HTML 5 Validation</a>`;
+      </script>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #eee7e2;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+}
+
+.flex-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+.outer-container {
+  background-color: white;
+  margin: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 550px;
+  box-shadow: 2px 4px 2px grey;
+}
+
+label {
+  width: 100%;
+  text-align: center;
+}
+
+input,
+select,
+fieldset,
+textarea,
+button {
+  margin-top: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  border-width: 2px;
+  border-style: groove;
+  border-color: threedface;
+  background-color: white;
+  padding: 5px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+input:hover,
+select:hover,
+input:focus {
+  background-color: #eaeaea;
+}
+
+input[type="submit"],
+input[type="reset"],
+button {
+  width: 100%;
+  height: 50px;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  padding: 5px 10px 5px 10px;
+  font-family: "Roboto", sans-serif;
+  background-color: #0067b1;
+  color: white;
+  border-width: 2px;
+  border-style: groove;
+  border-color: threedface;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3285c0;
+  cursor: pointer;
+}
+
+input[type="reset"] {
+  background-color: #830f0f;
+}
+
+input[type="reset"]:hover {
+  background-color: #9b3e3e;
+}
+
+.radio-wrapper {
+  width: 400px;
+  box-sizing: border-box;
+}
+
+.radio-wrapper input {
+  width: 20px;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+h1 {
+  text-align: center;
+}
+
+#validator {
+  padding: 10px;
+}
+
+#sales-form {
+  padding: 20px;
+}
